@@ -1,0 +1,18 @@
+#form {
+    margin: 10px 0 5px;
+}
+
+.item-close.close {
+    opacity: 0;
+}
+.list-group-item:hover .item-close {
+    opacity: 0.5;
+}
+
+.item-name {
+    padding-left: 4px;
+}
+
+.strike {
+    text-decoration: line-through;
+}
