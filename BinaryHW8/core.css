@@ -1,0 +1,23 @@
+body {
+    overflow-x: hidden;
+}
+
+.customer-list {
+    margin-top: 15px
+}
+
+.well {
+    margin: 15px;
+}
+
+.add-product-form {
+    margin-top: 10px;
+}
+
+.list-name {
+    text-transform: uppercase;
+}
+
+.thumbnail {
+    margin-bottom: 10px !important;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>BinaryHW8 - AngularJS</title>
+    <link rel="stylesheet" type="text/css" href="core.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js"></script>
+</head>
+<body ng-cloak>
+<div class="row">
+    <div class="products well well-lg col-sm-offset-2 col-md-offset-2 col-md-4 col-sm-8" ng-controller="products">
+        <div class="row">
+            <div class="col-xs-7 col-sm-7 col-md-5">
+                <input class="form-control" type="text" ng-model="searchText" placeholder="Search...">
+            </div>
+            <div class="col-xs-5 col-sm-5 col-md-7 text-right">
+                <button class="btn btn-primary" ng-click='showList()'>
+                    Products <span class="badge">{{productCount}}</span></button>
+            </div>
+        </div>
+        <div class="product-list" ng-show="showForm">
+            <ul class="list-group customer-list" ng-show="showForm">
+                <li class="list-group-item" ng-repeat="product in productList | filter:searchText">
+                    <span class="glyphicon glyphicon-star text-muted"></span>
+                    <span>{{product.name}}</span>
+                    <span class="pull-right">${{product.price}}</span>
+                </li>
+            </ul>
+            <button class="btn btn-default" ng-click='showAddProduct()'>Add Product</button>
+            <form class="add-product-form" ng-show="showAddProductForm">
+                <div class="form-group">
+                    <label for="name">Name of product</label>
+                    <input id="name" class="form-control" ng-model="name" type="text" placeholder="Product name">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price of product</label>
+                    <input id="price" class="form-control" ng-model="price" type="text" placeholder="Price">
+                </div>
+                <button class="btn btn-primary" ng-click='addProduct()'>Add</button>
+            </form>
+        </div>
+    </div>
+    <div class="customers well well-lg col-sm-offset-2 col-md-offset-0 col-md-4 col-sm-8" ng-controller="customers">
+        <div class="row">
+            <div class="col-xs-7 col-sm-7 col-md-5">
+                <input class="form-control" type="text" ng-model="search.name" placeholder="Search...">
+            </div>
+            <div class="col-xs-5 col-sm-5 col-md-7 text-right">
+                <button class="btn btn-primary" ng-click='showList()'>
+                    Customers <span class="badge">{{customerCount}}</span></button>
+            </div>
+        </div>
+        <div class="list-group customer-list" ng-show="showForm">
+            <div class="list-group-item" ng-repeat="customer in customerList | filter:search:strict">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img ng-if="customer.staticAvatar" src="img/{{customer.staticAvatar}}">
+                            <img ng-if="customer.avatar" ng-src='{{customer.avatar}}'>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Пользователь:</h4>
+                            </div>
+                            <div class="panel-body list-group">
+                                <div class="list-group-item list-name" ng-if="customer.name">
+                                    {{customer.name}}
+                                </div>
+                                <div class="list-group-item list-name" ng-if="customer.age">
+                                    {{customer.age}}
+                                </div>
+                                <div class="list-group-item list-name" ng-if="customer.settlement">
+                                    {{customer.settlement}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button type="button" class="btn btn-link" ng-click="removeCustomer($index)">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    Remove
+                </button>
+            </div>
+        </div>
+        <button class="btn btn-default" ng-click='showAddCustomer()'>Add Customer</button>
+        <form class="add-product-form" ng-show="showAddCustomerForm">
+            <div class="form-group">
+                <div class="avatarField">
+                    <input id="imageInput" class="btn btn-default" type="file" accept="image/*"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nname">Name of customer</label>
+                <input id="nname" class="form-control" ng-model="name" type="text" placeholder="Customer name">
+            </div>
+            <div class="form-group">
+                <label for="age">Age of customer</label>
+                <input id="age" class="form-control" ng-model="age" type="text" placeholder="Customer age">
+            </div>
+            <div class="form-group">
+                <label for="settlement">Customer settlement</label>
+                <input id="settlement" class="form-control" ng-model="settlement" type="text"
+                       placeholder="Customer settlement">
+            </div>
+            <button class="btn btn-primary" ng-click='onAddCustomer()'>Add</button>
+        </form>
+
+    </div>
+</div>
+</body>
+<script src="app.js"></script>
+</html>
