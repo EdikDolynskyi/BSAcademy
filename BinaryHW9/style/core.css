@@ -1,0 +1,34 @@
+ul {
+    padding: 0 !important;
+}
+
+li {
+    list-style-type: none;
+}
+
+#image-full-view-container {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 999;
+}
+
+.thumbnails-container{
+    position: absolute;
+    top: 38vh;
+}
+
+.thumbnail-container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.thumbnail-container > .thumbnail {
+    display: inline-block;
+    margin-bottom: 0;
+}
