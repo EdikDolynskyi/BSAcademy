@@ -1,0 +1,149 @@
+body {
+    background-color: #a4d5ff;
+    padding: 5px 20px;
+}
+
+
+.header {
+    height: 80px;
+    border: 1px solid #000;
+}
+
+.header div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header-square {
+    background-color: #7684ff;
+    border-right: solid 1px black;
+    width: 100px;
+    height: 80px;
+}
+
+.header-text {
+    padding-left: 20px;
+}
+
+
+.content {
+    position: relative;
+    border: 1px solid #000;
+}
+
+.menu {
+    position: absolute;
+    border-right: solid 1px #000;
+    background: lightgreen;
+    width: 170px;
+    height: 100%;
+    text-align: left;
+}
+
+.menu-item {
+    border: solid 1px black;
+}
+
+.menu-item:first-child {
+    border-top: none;
+}
+
+
+.blocks {
+    margin-left: 170px;
+}
+
+.content-part {
+    text-align: center;
+}
+
+#part1 {
+    min-height: 250px;
+
+}
+
+#part2 {
+    border-top: 1px solid #000;
+    min-height: 150px;
+}
+
+
+.block-hw-centered-width-fixed {
+    display: inline-table;
+    border: solid 1px black;
+    background-color: lightpink;
+    margin: 10px;
+    padding: 5px;
+    width: 150px;
+    height: 100px;
+}
+
+.block-hw-centered-width-fixed > .b-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.block-hw-centered-width-rez {
+    display: inline-table;
+    border: solid 1px black;
+    background-color: lightpink;
+    margin: 10px;
+    padding: 5px;
+    width: 25%;
+    height: 100px;
+    text-align: left;
+}
+.block-hw-centered-width-rez > .b-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.footer {
+    border: solid 1px black;
+    height: 100px;
+    text-align: center;
+}
+
+.footer-block {
+    border-right: solid 1px #000;
+    border-bottom: solid 1px #000;
+    background-color: orange;
+    width: 33.333333%;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+}
+.footer-block:last-child {
+    border-right: none;
+}
+.footer-block .inner-table {
+    display: inline-table;
+    height: 50px;
+}
+
+.f-content{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.footer-part2{
+    line-height: 45px;
+}
+
+.ribbon {
+    position: relative;
+    overflow: hidden;
+}
+.ribbon:after {
+    position:absolute;
+    top:0;
+    right: -15%;
+    width: 60%;
+    height: 10px;
+    border: 1px solid #000;
+    transform:rotate(45deg);
+    content: " ";
+    display:block;
+}
+
+
