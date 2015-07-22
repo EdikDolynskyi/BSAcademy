@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    color: #333;
+    font-family: "Segoe UI", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.94em;
+    line-height: 135%;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: normal;
+    padding: 0px 0 10px;
+    line-height: 100%;
+    font-style: italic;
+}
+
+a {
+    color: #cd5252;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #963c3c;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo img {
+    width: 15%;
+}
+
+.header-text {
+    display: block;
+    padding: 30px 100px;
+}
+
+#colRight a {
+    margin: 2%;
+}
+
+blockquote {
+    padding: 5px;
+}
+
+.nav {
+    margin-top: 15px;
+}
+
+.nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    margin: 0 5px 10px 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    *display: inline;
+}
+
+.nav a {
+    padding: 3px 12px;
+    text-decoration: none;
+    color: #999;
+    line-height: 100%;
+}
+
+.nav a:hover {
+    color: #000;
+}
+
+.nav .current a {
+    background: #999;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.nav ul {
+    text-align: center;
+}
+
+#wrapper {
+    margin: 0 auto;
+    border: 0px solid #000;
+    width: 100%;
+    max-width: 1000px;
+    height: auto !important;
+
+}
+
+.headerInner {
+    border: 0px solid #000;
+    background: #d04942;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 0px;
+
+}
+
+#content {
+    margin-top: 25px;
+    border: 0px solid #1FA2E1;
+}
+
+.text {
+    margin: 15px;
+}
+
+#content #colLeft {
+    border: 0px solid #000;
+    float: left;
+    width: 67%;
+    margin-right: 0px;
+    background: #85c9cf;
+
+}
+
+#content #colRight {
+    position: relative;
+    margin-left: 30px;
+    float: left;
+    width: 30%;
+    border: 0px solid #1FA2E1;
+    background: #d3d3d3;
+}
+
+#middle:after {
+    content: '.';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 2px;
+}
+
+.logo a {
+    margin-left: 30px;
+    font-size: 30px;
+    color: #96b551;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.footer_block {
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    width: 27%;
+    font-size: 13px;
+}
+
+footer {
+    background-color: #333;
+    text-align: center;
+    color: #fff;
+}
+
+@media screen and (min-width: 100px) and (max-width: 1024px) {
+
+    body #wrapper {
+        margin-top: 40px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    body .headerInner {
+        border: 0px solid #000;
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #wrapper #content #colLeft {
+        border: 0px solid #ccc;
+        float: left;
+        width: 67%;
+    }
+
+    #wrapper #content #colRight {
+        margin-left: 3%;
+        float: left;
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 720px) {
+
+    #wrapper #content #colLeft {
+        float: none;
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    #wrapper #content #colRight {
+        margin-left: 0px;
+        margin-top: 25px;
+        float: none;
+        width: 100%;
+    }
+
+    #wrapper .footer_block {
+        display: block;
+        width: 100%;
+        margin-right: 2%;
+    }
+
+    .nav {
+        position: relative;
+        min-height: 40px;
+    }
+
+    .nav ul {
+        width: 70%;
+        padding: 5px 0;
+        position: absolute;
+        top: 0;
+        left: 10%;
+        border: solid 1px #aaa;
+        background: #FAFAFA url(img/menu.png) no-repeat 2px 1px;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    }
+
+    .nav li {
+        display: none;
+        margin-left: 10px;
+    }
+
+    .nav .current {
+        display: block;
+    }
+
+    .nav a {
+        display: block;
+        padding: 5px 5px 5px 32px;
+        text-align: left;
+    }
+
+    .nav .current a {
+        background: none;
+        color: #666;
+    }
+
+    .nav ul:hover {
+        background-image: none;
+    }
+
+    .nav ul:hover li {
+        display: block;
+        margin: 0 0 5px;
+    }
+
+    .nav.right ul {
+        left: auto;
+        right: 0;
+    }
+
+    .nav.center ul {
+        left: 50%;
+        margin-left: -90px;
+    }
+
+    .header-text {
+        line-height: 85%;
+    }
+}
+
+
+
