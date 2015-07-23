@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="chat">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/css/core.css" rel="stylesheet"/>
+    <title>socket.io Chat</title>
+</head>
+<body>
+<div ng-controller="ChatController"
+     class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
+    <div class="page-header container-fluid">
+        <div class="row">
+            <h1 ng-bind="room" class="col-sm-6"></h1>
+            <h1 class="col-sm-6 text-muted text-right">
+                <small ng-bind="username"></small>
+            </h1>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div ng-hide="messages.length" class="text-center">
+                <h3>Waiting for messages...</h3>
+            </div>
+            <div ng-repeat="message in messages"
+                 ng-class="{'text-left': !message.isMine(), 'text-right': message.isMine()}" class="message">
+                <h4 class="well well-sm">{{message.text}}</h4>
+                <div class="text-muted">by {{message.owner}} at {{message.time | date:'HH:mm:ss'}}</div>
+            </div>
+        </div>
+        <form ng-submit="sendMessage()" class="panel-footer">
+            <button ng-click="showSettings = true" type="button" class="btn btn-default settings-button">
+                <span class="glyphicon glyphicon-cog"></span>
+            </button>
+            <div class="input-group">
+                <input ng-model="messageText" type="text" class="form-control" placeholder="Message...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">Send!</button>
+                    </span>
+            </div>
+        </form>
+    </div>
+    <form class="modal" ng-class="{block: showSettings}" ng-submit="roomAndUsername()">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button ng-click="closeSettings()" type="button" class="close">
+                        <span>&times;</span>
+                    </button>
+                    <h4 class="modal-title">Settings</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Room</label>
+                        <input ng-model="room" class="form-control" placeholder="Enter name of room to join.">
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input ng-model="username" class="form-control" placeholder="Name to sign your messages.">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="/js/chat.js"></script>
+</body>
+</html>

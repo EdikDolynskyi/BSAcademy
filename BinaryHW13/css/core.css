@@ -1,0 +1,19 @@
+.page-header.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.message .well {
+    display: inline-block;
+    margin-bottom: 0;
+    word-break: break-all;
+}
+
+.settings-button {
+    float: right;
+    margin-left: 5px;
+}
+
+.block {
+    display: block !important;
+}
